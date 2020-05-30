@@ -1,0 +1,38 @@
+//Header
+.site-header {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  top: 0px;
+  z-index: 99;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
+}
+.header {
+  &__container {
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    height: 97px;
+    width: 100%;
+    ._row {
+    }
+
+    ._element {
+    }
+  }
+}
+.logo img {
+  height: 45px;
+  width: 120px;
+  min-width: 120px;
+}
+.main-navigation {
+}
+.menu-toggle {
+}
+.language {
+}

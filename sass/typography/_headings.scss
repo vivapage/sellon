@@ -4,5 +4,15 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
+  clear: both;
+  font-family: $font__header;
+  color: $font__header;
+}
+
+h3.entry-title {
+  margin: 20px 0 10px 0;
+  & > a {
+    text-decoration: none;
+    font-size: 1.2em;
+  }
 }

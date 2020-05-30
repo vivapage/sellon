@@ -1,2 +1,81 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+#secondary {
+  //width: 30%;
+  flex: 0 0 30%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+$minwidth: 320px;
+$mw: 1140;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+.container {
+  max-width: $mw + px;
+  margin: 0 auto;
+  @media (max-width: $md1 + px) {
+    max-width: 1140px;
+  }
+  @media (max-width: $md2 + px) {
+    max-width: 750px;
+  }
+  @media (max-width: $md3 + px) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+.post__container {
+  padding: 1.5em 0;
+  background-color: $color__background-post;
+  min-height: 100%;
+}
+
+.page__content {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  min-height: 100%;
+}
+
+.nav-subtitle {
+}
+.nav-title {
+}
+
+.container-row {
+  display: flex;
+  width: 100%;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.widget-area section {
+  padding: 1.5em;
+  background-color: #fff;
+}
+article {
+  //width: 70%;
+  flex: 1 1 auto;
+  padding: 1.5em;
+  background-color: #fff;
+  margin-left: 1.5em;
+}

@@ -1,0 +1,20 @@
+//Footer
+.site-footer {
+  background-color: #191919;
+}
+.site-info {
+  position: relative;
+  padding: 15px 0 30px 0;
+  color: #eaeaea;
+  p {
+    text-align: center;
+    margin: 0;
+    line-height: 2em;
+  }
+  a {
+    color: #eaeaea;
+  }
+  a:hover {
+    color: #fb2056;
+  }
+}

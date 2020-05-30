@@ -1,2 +1,13 @@
+form#searchform {
+  display: flex;
+  height: 50px;
+  & > input {
+    flex-basis: 100%;
+    border-radius: 5px 0 0 5px;
+    background-color: #f5f5f5;
+    padding-left: calc(50px / 3);
+    padding-right: calc(50px / 3);
+  }
+}
 @import "buttons";
 @import "fields";
