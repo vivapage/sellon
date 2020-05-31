@@ -19,6 +19,7 @@ get_header();
 
 					get_template_part('template-parts/content-lead');
 
+
 					the_post_navigation(
 						array(
 							'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'sellon') . '</span> <span class="nav-title">%title</span>',

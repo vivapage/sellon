@@ -1,12 +1,12 @@
 <?php
 
 /**
- * sellon functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package sellon
- */
+	 * sellon functions and definitions
+	 *
+	 * @link https://developer.wordpress.org/themes/basics/theme-functions/
+	 *
+	 * @package sellon
+	 */
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
@@ -277,3 +277,5 @@ function custom_user_contactmethods($user_contact)
 
 	return $user_contact;
 }
+
+add_filter('gform_enable_field_label_visibility_settings', '__return_true');
