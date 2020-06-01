@@ -27,3 +27,25 @@ button#searchsubmit {
   font-size: 16px;
   cursor: pointer;
 }
+
+.wp-block-button {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+a.wp-block-button__link {
+  text-align: center;
+  background-color: #61ce70;
+  border-color: #61ce70;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 30px;
+  padding-top: 15px;
+  padding-right: 40px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}

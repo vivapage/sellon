@@ -38,13 +38,64 @@ hr {
 }
 
 .header-image {
-  height: 350px;
+  position: relative;
   background-size: cover;
   margin: 10px 0;
+  background-position: center center;
 }
+
 .header-image.contact {
+  height: 350px;
   border-top: 40px solid #f5f5f5;
   border-bottom: 40px solid #f5f5f5;
+}
+.header-image.about {
+  height: 550px;
+}
+.header-image.services {
+  height: 720px;
+}
+
+.about-header {
+  position: absolute;
+  color: #fff;
+  top: 40%;
+  font-size: 2em;
+  line-height: 1em;
+  text-shadow: 4px 4px 15px black, 0 0 1em black;
+}
+
+.services-header {
+  position: absolute;
+  color: #fff;
+  top: 35%;
+  font-size: 2em;
+  line-height: 2em;
+  text-shadow: 4px 4px 15px black, 0 0 1em black;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.has-text-align-center {
+  text-align: center;
+}
+.has-vivid-red-color {
+  background-color: red;
+}
+
+.header-title {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+
+h2.services {
+  text-transform: uppercase;
+  font-size: 2.5em;
 }
 
 .header-title {
@@ -182,7 +233,12 @@ a.button-link {
 
 .contact_row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.shadow img {
+  border-radius: 4px;
+  box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 0.07);
 }
 @import "lists";
 
@@ -191,8 +247,52 @@ img {
   max-width: 100%; // Adhere to container width.
 }
 
+.wp-block-columns {
+  display: flex;
+  justify-content: space-around;
+}
+.wp-block-column {
+  width: 50%;
+  &:first-child {
+    margin-right: 50px;
+  }
+  &:last-child {
+    margin-left: 50px;
+  }
+  h2 {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-transform: uppercase;
+    border-bottom: 3px solid $color__green;
+  }
+}
+
 figure {
   margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+}
+
+.has-cyan-bluish-gray-background-color {
+  background-color: #f5f5f5;
+}
+.has-background {
+  padding: 30px;
+}
+.wp-block-separator {
+  width: 200px;
+  height: 3px;
+  padding: 0;
+}
+
+h1.clients {
+  font-size: 2.5em;
+}
+.clients .wp-block-image img {
+  border-radius: 7px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 @import "tables";

@@ -606,14 +606,67 @@ hr {
 }
 
 .header-image {
-  height: 350px;
+  position: relative;
   background-size: cover;
   margin: 10px 0;
+  background-position: center center;
 }
 
 .header-image.contact {
+  height: 350px;
   border-top: 40px solid #f5f5f5;
   border-bottom: 40px solid #f5f5f5;
+}
+
+.header-image.about {
+  height: 550px;
+}
+
+.header-image.services {
+  height: 720px;
+}
+
+.about-header {
+  position: absolute;
+  color: #fff;
+  top: 40%;
+  font-size: 2em;
+  line-height: 1em;
+  text-shadow: 4px 4px 15px black, 0 0 1em black;
+}
+
+.services-header {
+  position: absolute;
+  color: #fff;
+  top: 35%;
+  font-size: 2em;
+  line-height: 2em;
+  text-shadow: 4px 4px 15px black, 0 0 1em black;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.has-text-align-center {
+  text-align: center;
+}
+
+.has-vivid-red-color {
+  background-color: red;
+}
+
+.header-title {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+
+h2.services {
+  text-transform: uppercase;
+  font-size: 2.5em;
 }
 
 .header-title {
@@ -793,14 +846,21 @@ a.button-link {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.shadow img {
+  border-radius: 4px;
+  -webkit-box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 0.07);
+          box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 0.07);
 }
 
 ul,
 ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0;
 }
 
 ul {
@@ -830,8 +890,66 @@ img {
   max-width: 100%;
 }
 
+.wp-block-columns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.wp-block-column {
+  width: 50%;
+}
+
+.wp-block-column:first-child {
+  margin-right: 50px;
+}
+
+.wp-block-column:last-child {
+  margin-left: 50px;
+}
+
+.wp-block-column h2 {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-transform: uppercase;
+  border-bottom: 3px solid #61ce70;
+}
+
 figure {
   margin: 1em 0;
+}
+
+.has-cyan-bluish-gray-background-color {
+  background-color: #f5f5f5;
+}
+
+.has-background {
+  padding: 30px;
+}
+
+.wp-block-separator {
+  width: 200px;
+  height: 3px;
+  padding: 0;
+}
+
+h1.clients {
+  font-size: 2.5em;
+}
+
+.clients .wp-block-image img {
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.clients .wp-block-image img:hover {
+  opacity: 0.7;
 }
 
 table {
@@ -898,6 +1016,28 @@ button#searchsubmit {
   min-width: 50px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.wp-block-button {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+a.wp-block-button__link {
+  text-align: center;
+  background-color: #61ce70;
+  border-color: #61ce70;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 30px;
+  padding-top: 15px;
+  padding-right: 40px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 input[type="text"],
