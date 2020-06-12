@@ -1,12 +1,12 @@
 <?php
 
 /**
-	 * sellon functions and definitions
-	 *
-	 * @link https://developer.wordpress.org/themes/basics/theme-functions/
-	 *
-	 * @package sellon
-	 */
+ * sellon functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package sellon
+ */
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
@@ -269,13 +269,72 @@ function disable_emojis_remove_dns_prefetch($urls, $relation_type)
 
 	return $urls;
 }
-
+/*
 add_filter('user_contactmethods', 'custom_user_contactmethods');
 function custom_user_contactmethods($user_contact)
 {
 	$user_contact['ext_phone'] = 'Phone number';
+	$user_contact['tin'] = 'Tin number';
 
 	return $user_contact;
 }
+*/
 
-add_filter('gform_enable_field_label_visibility_settings', '__return_true');
+
+//add_filter('gform_enable_field_label_visibility_settings', '__return_true');
+
+/*
+add_filter('gform_username', 'auto_username', 10, 4);
+function auto_username($username, $feed, $form, $entry)
+{
+	GFCommon::log_debug(__METHOD__ . '(): running.');
+	$username = "user";
+
+	if (empty($username)) {
+		GFCommon::log_debug(__METHOD__ . '(): Value for username is empty.');
+		return $username;
+	}
+
+	if (!function_exists('username_exists')) {
+		require_once(ABSPATH . WPINC . '/registration.php');
+	}
+
+	if (username_exists($username)) {
+		GFCommon::log_debug(__METHOD__ . '(): Username already exists, generating a new one.');
+		$i = 10000000;
+		while (username_exists($username . $i)) {
+			$i++;
+		}
+		$username = $username . $i;
+		GFCommon::log_debug(__METHOD__ . '(): New username: ' . $username);
+	};
+
+	return $username;
+}
+*/
+add_filter('gform_field_value_username', 'populate_username');
+function populate_username($value)
+{
+	GFCommon::log_debug(__METHOD__ . '(): running.');
+	$username = "user";
+
+	if (empty($username)) {
+		GFCommon::log_debug(__METHOD__ . '(): Value for username is empty.');
+		return $username;
+	}
+
+	if (!function_exists('username_exists')) {
+		require_once(ABSPATH . WPINC . '/registration.php');
+	}
+
+	if (username_exists($username)) {
+		GFCommon::log_debug(__METHOD__ . '(): Username already exists, generating a new one.');
+		$i = 10000000;
+		while (username_exists($username . $i)) {
+			$i++;
+		}
+		$username = $username . $i;
+		GFCommon::log_debug(__METHOD__ . '(): New username: ' . $username);
+	};
+	return $username;
+}

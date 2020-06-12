@@ -12,23 +12,24 @@ get_header();
     <div class="container">
       <div class="content">
         <?php get_sidebar(); ?>
+        <section>
+          <?php
+					while (have_posts()) :
+						the_post();
 
-        <?php
-				while (have_posts()) :
-					the_post();
-
-					get_template_part('template-parts/content-lead');
+						get_template_part('template-parts/content-lead');
 
 
-					the_post_navigation(
-						array(
-							'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'sellon') . '</span> <span class="nav-title">%title</span>',
-							'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'sellon') . '</span> <span class="nav-title">%title</span>',
-						)
-					);
+						the_post_navigation(
+							array(
+								'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'sellon') . '</span> <span class="nav-title">%title</span>',
+								'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'sellon') . '</span> <span class="nav-title">%title</span>',
+							)
+						);
 
-				endwhile; // End of the loop.
-				?>
+					endwhile; // End of the loop.
+					?>
+        </section>
       </div>
     </div>
   </div>

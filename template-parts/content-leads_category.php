@@ -38,7 +38,9 @@
 				?>
       </div>
       <div><span class="item-list">Дата создания заявки:</span>
-        <?php the_time('Y-m-d'); ?>
+        <?php $leads_date = get_post_meta(get_the_id(), 'leads_date');
+				print_r($leads_date[0]);
+				?>
       </div>
       <div><span class="item-list">Объем закупки:</span>
         <?php $amount = get_post_meta(get_the_id(), 'amount');

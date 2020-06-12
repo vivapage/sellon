@@ -619,6 +619,10 @@ hr {
 }
 
 .header-image.about {
+  height: 400px;
+}
+
+.header-image.questionnaire {
   height: 550px;
 }
 
@@ -952,6 +956,24 @@ h1.clients {
   opacity: 0.7;
 }
 
+.anketa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  overflow: hidden;
+  height: 165rem;
+}
+
+.no-results {
+  margin-left: 25px;
+}
+
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -1087,6 +1109,16 @@ select {
 
 textarea {
   width: 100%;
+}
+
+.tiny select {
+  width: 10%;
+}
+
+li#field_2_8.gfield.tiny.field_sublabel_below.field_description_below.gfield_visibility_visible
+div.ginput_container.ginput_container_select
+select#input_2_8.small.gfield_select {
+  width: 5%;
 }
 
 /*--------------------------------------------------------------
@@ -1244,7 +1276,8 @@ a:hover, a:active {
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-  margin: 0 0 1.5em;
+  margin: 1.5em 0 1.5em;
+  padding: 0 20px;
 }
 
 .comment-navigation .nav-links,
@@ -1254,6 +1287,13 @@ a:hover, a:active {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.comment-navigation .nav-links a,
+.posts-navigation .nav-links a,
+.post-navigation .nav-links a {
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .comment-navigation .nav-previous,

@@ -65,5 +65,18 @@ function replaceCategoryName($title)
 
 function my_data($input_date)
 {
-	return date_i18n("Y-m-d", strtotime($input_date));
+	return date_i18n("d.m.Y", strtotime($input_date));
 }
+
+
+
+// function to add a custom admin stylesheet
+function my_admin_style_sheet()
+{
+	echo '<style>
+	#gravityforms-update, #gravityforms-phone-extension-update, #gravityformsadvancedpostcreation-update, #gravityformsuserregistration-update, #gravityview-importer-update, #pods-gravity-forms-update {display: none;}
+	.media-modal {width: 60%; height: 80%; }
+	</style>';
+}
+
+add_action('admin_head', 'my_admin_style_sheet');
