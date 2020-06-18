@@ -7,7 +7,7 @@
  *
  * @package sellon
  */
-
+$posttype = get_post_type(get_the_ID());
 get_header();
 ?>
 
@@ -17,7 +17,14 @@ get_header();
       style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/fon-leads.jpg');">
     </div>
     <div class="header-title">
-      <h1>ЗАЯВКИ НА ОПТОВЫЕ ПАРТИИ ТОВАРОВ</h1>
+      <?php if ($posttype == 'leads') :
+        echo "<h1>ЗАЯВКИ НА ОПТОВЫЕ ПАРТИИ ТОВАРОВ</h1>";
+      elseif ($posttype == 'offer') :
+        echo "<h1>ПРЕДЛОЖЕНИЯ НА ОПТОВЫЕ ПАРТИИ ТОВАРОВ</h1>";
+      endif;
+      ?>
+
+
     </div>
 
   </header><!-- .page-header -->
@@ -26,38 +33,49 @@ get_header();
   <div class="container">
     <header class="page-header">
       <?php
-			the_archive_title('<h2 class="page-title">', '</h2>');
-			?>
+      the_archive_title('<h2 class="page-title">', '</h2>');
+      ?>
     </header><!-- .page-header -->
     <?php get_search_form(); ?>
     <div class="content">
-      <?php get_sidebar(); ?>
+      <?php
+      if ($posttype == 'leads') :
+        get_sidebar('leads');
+      elseif ($posttype == 'offer') :
+        get_sidebar('offer');
+      endif; ?>
 
       <?php if (have_posts()) : ?>
       <div class="page__content">
 
         <?php
-				/* Start the Loop */
-				while (have_posts()) :
-					the_post();
+        /* Start the Loop */
+        while (have_posts()) :
+          the_post();
 
-					/*
+          /*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-					get_template_part('template-parts/content', 'leads_category');
 
-				endwhile;
+          if ($posttype == 'leads') :
+            get_template_part('template-parts/content', 'leads_category');
+          elseif ($posttype == 'offer') :
+            get_template_part('template-parts/content', 'offers_category');
+          endif;
 
-				the_posts_navigation();
 
-			else :
+        endwhile;
 
-				get_template_part('template-parts/content', 'none');
+        the_posts_navigation();
 
-			endif;
-				?>
+      else :
+
+        get_template_part('template-parts/content', 'none');
+
+      endif;
+        ?>
       </div>
     </div>
   </div>

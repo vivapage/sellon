@@ -13,7 +13,7 @@ get_header();
 
 <main id="primary" class="site-main">
   <header class="page-header">
-    <div class="header-image"
+    <div class="header-image leads"
       style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/fon-leads.jpg');">
     </div>
     <div class="header-title">
@@ -26,7 +26,7 @@ get_header();
     <?php get_search_form(); ?>
 
     <div class="content">
-      <?php get_sidebar(); ?>
+      <?php get_sidebar('leads'); ?>
       <?php if (have_posts()) : ?>
       <div class="page__content">
         <?php
@@ -35,7 +35,7 @@ get_header();
           the_post();
           get_template_part('template-parts/content', get_post_type());
         endwhile;
-        the_posts_navigation();
+        the_posts_pagination();
       else :
         get_template_part('template-parts/content', 'none');
       endif;

@@ -27,7 +27,8 @@
     <p>© Glomark 2020, Консалтинговое агентство в сфере экспорта</p>
     <p>305000, г. Курск, ул. Дзержинского, д. 9А, оф. 3. тел.: +7 (499) 112-42-90</p>
 
-
+    <hr>
+    <a href="/wp-login.php?action=logout">logout</a>
   </div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->

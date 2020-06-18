@@ -13,11 +13,11 @@ get_header();
 
 <main id="primary" class="site-main">
   <header class="page-header">
-    <div class="header-image"
+    <div class="header-image offer"
       style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/fon-leads.jpg');">
     </div>
     <div class="header-title">
-      <h1>ЗАЯВКИ НА ОПТОВЫЕ ПАРТИИ ТОВАРОВ</h1>
+      <h1>ПРЕДЛОЖЕНИЯ НА ОПТОВЫЕ ПАРТИИ ТОВАРОВ</h1>
     </div>
 
   </header><!-- .page-header -->
@@ -26,19 +26,22 @@ get_header();
     <?php get_search_form(); ?>
 
     <div class="content">
-      <?php get_sidebar(); ?>
+      <?php get_sidebar('offer'); ?>
       <?php if (have_posts()) : ?>
       <div class="page__content">
         <?php
         /* Start the Loop */
         while (have_posts()) :
           the_post();
-          get_template_part('template-parts/content', get_post_type());
+          get_template_part('template-parts/content', 'offers');
         endwhile;
-        the_posts_navigation();
+        the_posts_pagination();
+      //the_posts_navigation();
       else :
         get_template_part('template-parts/content', 'none');
       endif;
+        ?>
+        <?php //the_posts_pagination(); 
         ?>
       </div>
     </div>

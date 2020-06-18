@@ -141,6 +141,28 @@ function sellon_widgets_init()
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Sidebar leads', 'sellon'),
+			'id'            => 'sidebar-leads',
+			'description'   => esc_html__('Add widgets here.', 'sellon'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Sidebar offer', 'sellon'),
+			'id'            => 'sidebar-offer',
+			'description'   => esc_html__('Add widgets here.', 'sellon'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action('widgets_init', 'sellon_widgets_init');
 
@@ -269,49 +291,8 @@ function disable_emojis_remove_dns_prefetch($urls, $relation_type)
 
 	return $urls;
 }
-/*
-add_filter('user_contactmethods', 'custom_user_contactmethods');
-function custom_user_contactmethods($user_contact)
-{
-	$user_contact['ext_phone'] = 'Phone number';
-	$user_contact['tin'] = 'Tin number';
-
-	return $user_contact;
-}
-*/
 
 
-//add_filter('gform_enable_field_label_visibility_settings', '__return_true');
-
-/*
-add_filter('gform_username', 'auto_username', 10, 4);
-function auto_username($username, $feed, $form, $entry)
-{
-	GFCommon::log_debug(__METHOD__ . '(): running.');
-	$username = "user";
-
-	if (empty($username)) {
-		GFCommon::log_debug(__METHOD__ . '(): Value for username is empty.');
-		return $username;
-	}
-
-	if (!function_exists('username_exists')) {
-		require_once(ABSPATH . WPINC . '/registration.php');
-	}
-
-	if (username_exists($username)) {
-		GFCommon::log_debug(__METHOD__ . '(): Username already exists, generating a new one.');
-		$i = 10000000;
-		while (username_exists($username . $i)) {
-			$i++;
-		}
-		$username = $username . $i;
-		GFCommon::log_debug(__METHOD__ . '(): New username: ' . $username);
-	};
-
-	return $username;
-}
-*/
 add_filter('gform_field_value_username', 'populate_username');
 function populate_username($value)
 {
@@ -337,4 +318,19 @@ function populate_username($value)
 		GFCommon::log_debug(__METHOD__ . '(): New username: ' . $username);
 	};
 	return $username;
+}
+
+
+add_filter('gform_field_value_postid', 'GetLastPostId');
+function GetLastPostId()
+{
+	global $wpdb;
+
+	$query = "SELECT ID FROM $wpdb->posts ORDER BY ID DESC LIMIT 0,1";
+
+	$result = $wpdb->get_results($query);
+	$row = $result[0];
+	$postid = $row->ID + 1;
+
+	return $postid;
 }

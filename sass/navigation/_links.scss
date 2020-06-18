@@ -1,20 +1,30 @@
 a {
-	color: $color__link;
+  color: $color__link;
 
-	&:visited {
-	}
+  &:visited {
+  }
 
-	&:hover,
-	&:focus,
-	&:active {
-	}
+  &:hover,
+  &:focus,
+  &:active {
+  }
 
-	&:focus {
-		outline: thin dotted;
-	}
+  &:focus {
+    outline: thin dotted;
+  }
 
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+.navigation.pagination {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  padding: 0 5px;
 }

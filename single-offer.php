@@ -11,13 +11,13 @@ get_header();
   <div class="post__container">
     <div class="container">
       <div class="content">
-        <?php get_sidebar('leads'); ?>
+        <?php get_sidebar('offer'); ?>
         <section>
           <?php
 					while (have_posts()) :
 						the_post();
 
-						get_template_part('template-parts/content-lead');
+						get_template_part('template-parts/content-offer');
 
 
 						the_post_navigation(

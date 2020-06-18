@@ -9,6 +9,13 @@ form#searchform {
     padding-right: calc(50px / 3);
   }
 }
+.error {
+  text-align: center;
+  padding: 30px;
+  color: red;
+  border: 1px solid red;
+  background-color: #ffa7a7;
+}
 
 @import "buttons";
 @import "fields";

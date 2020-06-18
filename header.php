@@ -31,17 +31,18 @@
     <header id="masthead" class="site-header">
       <div class="header__container">
         <div class="header__container _row">
-          <div class="header__container _element">
+          <div class="header__container _element_1">
             <div class="logo">
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img
                   src="<?php echo get_template_directory_uri(); ?>/images/logo.svg"
                   alt="<?php bloginfo('name'); ?>"></a>
             </div>
           </div>
-          <div class="header__container _element">
+          <div class="header__container _element_2">
             <nav id="site-navigation" class="main-navigation">
-              <button class="menu-toggle" aria-controls="primary-menu"
-                aria-expanded="false"><?php esc_html_e('Primary Menu', 'sellon'); ?></button>
+              <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"
+                  aria-hidden="true"></i>
+              </button>
               <?php
               wp_nav_menu(
                 array(
@@ -52,7 +53,7 @@
               ?>
             </nav><!-- #site-navigation -->
           </div>
-          <div class="header__container _element">
+          <div class="header__container _element_3">
             <div class="language">
               language
             </div>

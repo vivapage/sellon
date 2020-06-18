@@ -6,6 +6,7 @@ $size__site-sidebar: 25%;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   margin-top: 20px;
   border-radius: 5px;
+  height: 100%;
 }
 
 $minwidth: 320px;
@@ -44,6 +45,9 @@ $md4: 479.98;
 .content {
   display: flex;
   min-height: 100%;
+  @media (max-width: $md3 + px) {
+    flex-direction: column;
+  }
 }
 
 .nav-subtitle {
@@ -54,6 +58,9 @@ $md4: 479.98;
 .container-row {
   display: flex;
   width: 100%;
+  @media (max-width: $md3 + px) {
+    flex-direction: column;
+  }
 }
 
 .around {
@@ -78,4 +85,7 @@ article {
   padding: 1.5em;
   background-color: #fff;
   margin-left: 1.5em;
+  @media (max-width: $md3 + px) {
+    margin-left: 0;
+  }
 }
