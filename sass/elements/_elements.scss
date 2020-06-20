@@ -56,10 +56,19 @@ hr {
 }
 .header-image.about {
   height: 400px;
+  @media (max-width: $md3 + px) {
+    height: 100px;
+  }
 }
 
 .header-image.questionnaire {
   height: 550px;
+  @media (max-width: $md3 + px) {
+    height: 100px;
+  }
+  @media (max-width: $md2 + px) {
+    height: 150px;
+  }
 }
 
 .header-image.leads,
@@ -68,10 +77,16 @@ hr {
   @media (max-width: $md3 + px) {
     height: 100px;
   }
+  @media (max-width: $md2 + px) {
+    height: 150px;
+  }
 }
 
 .header-image.services {
   height: 720px;
+  @media (max-width: $md1 + px) {
+    height: 100px;
+  }
 }
 
 .about-header {
@@ -81,6 +96,10 @@ hr {
   font-size: 2em;
   line-height: 1em;
   text-shadow: 4px 4px 15px black, 0 0 1em black;
+  @media (max-width: $md3 + px) {
+    font-size: 1em;
+    top: 20%;
+  }
 }
 
 .services-header {
@@ -95,6 +114,10 @@ hr {
   right: 0;
   margin: 0 auto;
   text-transform: uppercase;
+  @media (max-width: $md1 + px) {
+    font-size: 1em;
+    top: 0;
+  }
 }
 
 .has-text-align-center {
@@ -114,6 +137,9 @@ hr {
 h2.services {
   text-transform: uppercase;
   font-size: 2.5em;
+  @media (max-width: $md1 + px) {
+    font-size: 1.2em;
+  }
 }
 
 .header-title {
@@ -196,7 +222,7 @@ h3.entry-title.single {
   & > div {
     width: 55%;
     margin: 5px 0;
-    @media (max-width: $md3 + px) {
+    @media (max-width: $md1 + px) {
       width: 100%;
     }
   }
@@ -280,14 +306,26 @@ img {
 .wp-block-columns {
   display: flex;
   justify-content: space-around;
+  @media (max-width: $md3 + px) {
+    flex-direction: column;
+  }
 }
 .wp-block-column {
   width: 50%;
+  @media (max-width: $md3 + px) {
+    width: 100%;
+  }
   &:first-child {
     margin-right: 50px;
+    @media (max-width: $md3 + px) {
+      margin: 0;
+    }
   }
   &:last-child {
     margin-left: 50px;
+    @media (max-width: $md3 + px) {
+      margin: 0;
+    }
   }
   h2 {
     padding-bottom: 20px;

@@ -20,39 +20,69 @@ if (!is_active_sidebar('sidebar-leads')) {
     <nav class="cat-menu">
       <?php
 
+			if (wp_is_mobile()) {
 
-			echo '<ul>';
-			$custom_terms = get_terms('leads_category');
+				echo '<select onchange="location = this.value;">';
+				echo '<option value="" selected="selected">Выбрать категорию</option>';
+				$custom_terms = get_terms('leads_category');
 
-			foreach ($custom_terms as $custom_term) {
-				wp_reset_query();
-				$args = array(
-					'post_type' => 'leads',
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'leads_category',
-							'field' => 'slug',
-							'terms' => $custom_term->slug,
+				foreach ($custom_terms as $custom_term) {
+					wp_reset_query();
+					$args = array(
+						'post_type' => 'leads',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'leads_category',
+								'field' => 'slug',
+								'terms' => $custom_term->slug,
+							),
 						),
-					),
-				);
+					);
 
-				$loop = new WP_Query($args);
-				if ($loop->have_posts()) {
-					//echo '<p>' . $custom_term->name . '</p>';
-					//echo '<p>' . $custom_term->slug . '</p>';
-					echo '<li><a href="/leads-category/' . $custom_term->slug . '">' . $custom_term->name . '</a></li>';
+					$loop = new WP_Query($args);
+					if ($loop->have_posts()) {
 
-					while ($loop->have_posts()) : $loop->the_post();
+						echo '<option value="/leads-category/' . $custom_term->slug . '">' . $custom_term->name . '</option>';
 
-					endwhile;
+						while ($loop->have_posts()) : $loop->the_post();
+
+						endwhile;
+					}
 				}
+				echo '</select>';
+			} else {
+				echo '<ul>';
+				$custom_terms = get_terms('leads_category');
+
+				foreach ($custom_terms as $custom_term) {
+					wp_reset_query();
+					$args = array(
+						'post_type' => 'leads',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'leads_category',
+								'field' => 'slug',
+								'terms' => $custom_term->slug,
+							),
+						),
+					);
+
+					$loop = new WP_Query($args);
+					if ($loop->have_posts()) {
+
+						echo '<li><a href="/leads-category/' . $custom_term->slug . '">' . $custom_term->name . '</a></li>';
+
+						while ($loop->have_posts()) : $loop->the_post();
+
+						endwhile;
+					}
+				}
+				echo '</ul>';
 			}
-			echo '</ul>';
 			?>
     </nav>
   </section>
   <?php
-	dynamic_sidebar('sidebar-offer');
+	dynamic_sidebar('sidebar-leads');
 	?>
 </aside><!-- #secondary -->

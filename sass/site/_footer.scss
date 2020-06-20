@@ -6,6 +6,9 @@
   position: relative;
   padding: 15px 0 30px 0;
   color: #eaeaea;
+  @media (max-width: $md2 + px) {
+    font-size: 0.8em;
+  }
   p {
     text-align: center;
     margin: 0;

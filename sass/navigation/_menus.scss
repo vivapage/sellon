@@ -1,7 +1,7 @@
 .main-navigation {
   display: block;
   width: 100%;
-  @media (max-width: $md3 + px) {
+  @media (max-width: $md1 + px) {
     position: absolute;
     top: 30px;
     left: 20px;
@@ -23,6 +23,9 @@
       left: -999em;
       z-index: 99999;
       background-color: rgba(255, 255, 255, 0.9);
+      @media (max-width: $md1 + px) {
+        position: static;
+      }
 
       ul {
         left: -999em;
@@ -64,8 +67,8 @@
 
     & > a {
       padding: 36px 10px;
-      @media (max-width: $md3 + px) {
-        padding: 3px 10px;
+      @media (max-width: $md1 + px) {
+        padding: 10px 10px;
       }
     }
     & > a:after {
@@ -130,7 +133,7 @@
   display: block;
 }
 
-@media screen and (min-width: $md3 + px) {
+@media screen and (min-width: $md1 + px) {
   .menu-toggle {
     display: none;
   }
@@ -183,17 +186,16 @@ ul#footer-menu.menu {
     text-decoration: none;
     color: #eaeaea;
     padding: 0 10px;
+    @media (max-width: $md2 + px) {
+      padding: 0 5px;
+    }
   }
   li a:hover {
     color: #fb2056;
   }
 }
-.menu-menu-1-container {
-  padding: 0;
-  background-color: transparent;
-}
 
-@media (max-width: $md3 + px) {
+@media (max-width: $md1 + px) {
   ._element_1 {
     order: 2;
   }
@@ -203,9 +205,11 @@ ul#footer-menu.menu {
   ._element_3 {
     order: 3;
   }
-
   .menu-menu-1-container {
-    padding: 20px 20px 0 20px;
-    background-color: #fff;
+    padding: 0 20px 0 20px;
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
   }
 }
