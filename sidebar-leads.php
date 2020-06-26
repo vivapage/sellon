@@ -42,7 +42,7 @@ if (!is_active_sidebar('sidebar-leads')) {
 					$loop = new WP_Query($args);
 					if ($loop->have_posts()) {
 
-						echo '<option value="/leads-category/' . $custom_term->slug . '">' . $custom_term->name . '</option>';
+						echo '<option value="/leads/category/' . $custom_term->slug . '">' . $custom_term->name . '</option>';
 
 						while ($loop->have_posts()) : $loop->the_post();
 
@@ -70,7 +70,7 @@ if (!is_active_sidebar('sidebar-leads')) {
 					$loop = new WP_Query($args);
 					if ($loop->have_posts()) {
 
-						echo '<li><a href="/leads-category/' . $custom_term->slug . '">' . $custom_term->name . '</a></li>';
+						echo '<li><a href="/leads/category/' . $custom_term->slug . '">' . $custom_term->name . '</a></li>';
 
 						while ($loop->have_posts()) : $loop->the_post();
 

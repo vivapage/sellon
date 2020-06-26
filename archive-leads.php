@@ -22,7 +22,11 @@ get_header();
 
   </header><!-- .page-header -->
   <div class="container">
-    <div class="indent"></div>
+    <?php
+    if (function_exists('yoast_breadcrumb')) {
+      yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    }
+    ?>
     <?php get_search_form(); ?>
 
     <div class="content">

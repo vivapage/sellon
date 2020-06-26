@@ -10,6 +10,11 @@ get_header();
 <main id="primary" class="site-main">
   <div class="post__container">
     <div class="container">
+      <?php
+			if (function_exists('yoast_breadcrumb')) {
+				yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+			}
+			?>
       <div class="content">
         <?php get_sidebar('leads'); ?>
         <section>
@@ -22,8 +27,8 @@ get_header();
 
 						the_post_navigation(
 							array(
-								'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'sellon') . '</span> <span class="nav-title">%title</span>',
-								'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'sellon') . '</span> <span class="nav-title">%title</span>',
+								'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'sellon') . '</span>',
+								'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'sellon') . '</span>',
 							)
 						);
 

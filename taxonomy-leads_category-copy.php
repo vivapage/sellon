@@ -64,12 +64,12 @@ get_header();
         if ($posttype == 'leads') :
           while (have_posts()) :
             the_post();
-            get_template_part('template-parts/content', 'leads');
+            get_template_part('template-parts/content', 'leads_category');
           endwhile;
         elseif ($posttype == 'offers') :
           while (have_posts()) :
             the_post();
-            get_template_part('template-parts/content', 'offers');
+          //get_template_part('template-parts/content', 'offers_category');
           endwhile;
         endif;
 

@@ -806,7 +806,7 @@ h2.services {
 }
 
 article.leads,
-article.offer {
+article.offers {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1851,7 +1851,7 @@ main {
 }
 
 .heading {
-  margin: 0 auto;
+  margin: 0 auto !important;
 }
 
 .heading h2 {

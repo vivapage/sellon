@@ -8,7 +8,7 @@
  * @package sellon
  */
 /*
-if (!is_active_sidebar('sidebar-offer')) {
+if (!is_active_sidebar('sidebar-offers')) {
 	return;
 }
 */
@@ -29,7 +29,7 @@ if (!is_active_sidebar('sidebar-offer')) {
 				foreach ($custom_terms as $custom_term) {
 					wp_reset_query();
 					$args = array(
-						'post_type' => 'offer',
+						'post_type' => 'offers',
 						'tax_query' => array(
 							array(
 								'taxonomy' => 'leads_category',
@@ -42,7 +42,7 @@ if (!is_active_sidebar('sidebar-offer')) {
 					$loop = new WP_Query($args);
 					if ($loop->have_posts()) {
 
-						echo '<option value="/leads-category/' . $custom_term->slug . '">' . $custom_term->name . '</option>';
+						echo '<option value="/offers/category/' . $custom_term->slug . '">' . $custom_term->name . '</option>';
 
 						while ($loop->have_posts()) : $loop->the_post();
 
@@ -56,9 +56,13 @@ if (!is_active_sidebar('sidebar-offer')) {
 
 				foreach ($custom_terms as $custom_term) {
 					wp_reset_query();
+
 					$args = array(
-						'post_type' => 'offer',
+						'post_type' => 'offers',
+						'post_status' => 'published',
+						'posts_per_page' => -1,
 						'tax_query' => array(
+							'relation' => 'AND',
 							array(
 								'taxonomy' => 'leads_category',
 								'field' => 'slug',
@@ -70,7 +74,8 @@ if (!is_active_sidebar('sidebar-offer')) {
 					$loop = new WP_Query($args);
 					if ($loop->have_posts()) {
 
-						echo '<li><a href="/leads-category/' . $custom_term->slug . '">' . $custom_term->name . '</a></li>';
+						echo '<li><a href="/offers/category/' . $custom_term->slug . '">' . $custom_term->name . '</a></li>';
+
 
 						while ($loop->have_posts()) : $loop->the_post();
 

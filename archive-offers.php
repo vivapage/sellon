@@ -16,17 +16,23 @@ get_header();
     <div class="header-image offer"
       style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/fon-leads.jpg');">
     </div>
+
     <div class="header-title">
       <h1>ПРЕДЛОЖЕНИЯ НА ОПТОВЫЕ ПАРТИИ ТОВАРОВ</h1>
     </div>
 
   </header><!-- .page-header -->
   <div class="container">
-    <div class="indent"></div>
+    <?php
+    if (function_exists('yoast_breadcrumb')) {
+      yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    }
+    ?>
+
     <?php get_search_form(); ?>
 
     <div class="content">
-      <?php get_sidebar('offer'); ?>
+      <?php get_sidebar('offers'); ?>
       <?php if (have_posts()) : ?>
       <div class="page__content">
         <?php

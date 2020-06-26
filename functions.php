@@ -154,8 +154,8 @@ function sellon_widgets_init()
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Sidebar offer', 'sellon'),
-			'id'            => 'sidebar-offer',
+			'name'          => esc_html__('Sidebar offers', 'sellon'),
+			'id'            => 'sidebar-offers',
 			'description'   => esc_html__('Add widgets here.', 'sellon'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',

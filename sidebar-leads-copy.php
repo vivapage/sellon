@@ -15,10 +15,10 @@ if (!is_active_sidebar('sidebar-leads')) {
 ?>
 
 <aside id="secondary" class="widget-area">
-  <section id="pods_widget_list-2" class="widget pods_widget_list">
-    <h2 class="widget-title">Категории</h2>
-    <nav class="cat-menu">
-      <?php
+	<section id="pods_widget_list-2" class="widget pods_widget_list">
+		<h2 class="widget-title">Категории</h2>
+		<nav class="cat-menu">
+			<?php
 
 
 			echo '<ul>';
@@ -50,9 +50,9 @@ if (!is_active_sidebar('sidebar-leads')) {
 			}
 			echo '</ul>';
 			?>
-    </nav>
-  </section>
-  <?php
-	dynamic_sidebar('sidebar-offer');
+		</nav>
+	</section>
+	<?php
+	dynamic_sidebar('sidebar-offers');
 	?>
 </aside><!-- #secondary -->
